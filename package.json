@@ -71,7 +71,8 @@
     "test:coverage": "CI=true yarn run test:unit --env=jsdom --coverage",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "fmt": "prettier --write './src/**/*.{ts,tsx,js,jsx}'"
+    "fmt": "prettier --write './src/**/*.{ts,tsx,js,jsx}'",
+    "fmt:check": "prettier --check './src/**/*.{ts,tsx,ts,sx}'"
   },
   "sideEffects": false
 }
