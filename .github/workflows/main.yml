@@ -39,4 +39,9 @@ jobs:
     - run: yarn fmt:check
     - run: yarn lint
     - run: yarn lint:types
-    - run: yarn test:coverage
+    - name: Jest coverage report
+      uses: ArtiomTr/jest-coverage-report-action@v1.3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        threshold: 80 # value in percents
+
