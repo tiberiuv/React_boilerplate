@@ -4,8 +4,6 @@
 name: Node.js CI
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -40,8 +38,9 @@ jobs:
     - run: yarn lint
     - run: yarn lint:types
     - name: Jest coverage report
-      uses: ArtiomTr/jest-coverage-report-action@v1.3
+      uses: mattallty/jest-github-action@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        threshold: 80 # value in percents
+        test-command: "yarn test:unit"
 
