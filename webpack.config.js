@@ -37,7 +37,7 @@ const postCssOptions = {
 
 module.exports = {
     mode: isProduction ? buildEnv : 'development',
-    entry: {boiler_plate: ['@babel/polyfill', './src/index']},
+    entry: {boiler_plate: ['./src/index']},
     output: {
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/',

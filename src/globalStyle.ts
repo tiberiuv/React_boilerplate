@@ -1,6 +1,6 @@
-import {css} from '@emotion/core'
+import {jsx, css, SerializedStyles} from '@emotion/react'
 
-const style: string = css`
+const style: SerializedStyles = css`
     * {
         box-sizing: border-box;
     }

@@ -15,12 +15,11 @@ module.exports = function(api) {
     return {
         presets: [
             ['@babel/preset-env', presetEnvConfig],
-            ['@babel/preset-react'],
+            ['@babel/preset-react', {runtime: 'automatic', importSource: '@emotion/react'}],
             ['@babel/typescript', {allExtensions: true, isTSX: true}],
-            ['@emotion/babel-preset-css-prop'],
         ],
         plugins: [
-            'emotion',
+            '@emotion/babel-plugin',
             '@babel/plugin-syntax-dynamic-import',
             '@babel/plugin-proposal-object-rest-spread',
             '@babel/plugin-proposal-export-default-from',
