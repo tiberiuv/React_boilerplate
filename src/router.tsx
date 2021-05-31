@@ -1,7 +1,7 @@
-import React from 'react'
+import React, {ReactElement} from 'react'
 import {Route} from 'react-router-dom'
 
-const Router = () => (
+const Router = (): ReactElement => (
     <>
         <Route path={'/'} />
     </>

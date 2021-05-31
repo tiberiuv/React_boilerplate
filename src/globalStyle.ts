@@ -1,4 +1,4 @@
-import {jsx, css, SerializedStyles} from '@emotion/react'
+import {css, SerializedStyles} from '@emotion/react'
 
 const style: SerializedStyles = css`
     * {
