@@ -5,7 +5,7 @@ import {Global} from '@emotion/react'
 
 const Container = styled.h1`
     margin: auto;
-    color: red;
+    color: blue;
 `
 
 const Wrapper = ({text}: {text: string}) => <Container>{text}</Container>
