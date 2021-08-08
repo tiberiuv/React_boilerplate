@@ -8,7 +8,7 @@ const Container = styled.h1`
     color: blue;
 `
 
-const Wrapper = ({text}: {text: string}) => <Container>{text}</Container>
+const Wrapper = <T,>({text}: {text: T}) => <Container>{text}</Container>
 
 const App = (): ReactElement => {
     return (

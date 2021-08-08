@@ -1,8 +1,8 @@
 module.exports = {
-    // parser: 'babel-eslint',
     parser: '@typescript-eslint/parser',
-    plugins: ['babel', 'react', 'react-hooks', '@typescript-eslint'],
+    plugins: ['prettier', 'babel', 'react', 'react-hooks', '@typescript-eslint'],
     extends: [
+        'prettier',
         'eslint:recommended',
         'plugin:react/recommended',
         'plugin:@typescript-eslint/eslint-recommended',
@@ -10,7 +10,7 @@ module.exports = {
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
     ],
     parserOptions: {
-        ecmaVersion: 2018,
+        ecmaVersion: 2020,
         ecmaFeatures: {
             jsx: true,
         },

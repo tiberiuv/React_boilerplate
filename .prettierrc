@@ -1,6 +1,6 @@
 {
     "printWidth": 120,
-    "parser": "babel",
+    "parser": "babel-ts",
     "semi": false,
     "singleQuote": true,
     "bracketSpacing": false,
