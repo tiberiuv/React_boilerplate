@@ -37,5 +37,6 @@ module.exports = {
                 allowTypedFunctionExpressions: false,
             },
         ],
+        'react/react-in-jsx-scope': ['off'],
     },
 }

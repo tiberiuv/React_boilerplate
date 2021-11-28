@@ -19,7 +19,16 @@ module.exports = function(api) {
             ['@babel/typescript', {allExtensions: true, isTSX: true}],
         ],
         plugins: [
-            '@emotion/babel-plugin',
+            [
+      "@emotion",
+      {
+        // sourceMap is on by default but source maps are dead code eliminated in production
+        "sourceMap": true,
+        "autoLabel": "dev-only",
+        "labelFormat": "[local]",
+        "cssPropOptimization": true
+      }
+    ],
             '@babel/plugin-syntax-dynamic-import',
             '@babel/plugin-proposal-object-rest-spread',
             '@babel/plugin-proposal-export-default-from',

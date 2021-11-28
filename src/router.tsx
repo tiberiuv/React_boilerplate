@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react'
+import {ReactElement} from 'react'
 import {Route} from 'react-router-dom'
 
 const Router = (): ReactElement => (
