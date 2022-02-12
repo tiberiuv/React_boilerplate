@@ -5,9 +5,7 @@ module.exports = {
         'prettier',
         'eslint:recommended',
         'plugin:react/recommended',
-        'plugin:@typescript-eslint/eslint-recommended',
-        'plugin:@typescript-eslint/recommended',
-        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'plugin:react/jsx-runtime'
     ],
     parserOptions: {
         ecmaVersion: 2020,
@@ -15,7 +13,6 @@ module.exports = {
             jsx: true,
         },
         sourceType: 'module',
-        project: ['./tsconfig.json'],
         tsconfigRootDir: __dirname,
     },
     env: {
@@ -37,6 +34,16 @@ module.exports = {
                 allowTypedFunctionExpressions: false,
             },
         ],
-        'react/react-in-jsx-scope': ['off'],
     },
+    overrides: [{
+        files: ['*.ts', '*.tsx'],
+        extends: [
+            'plugin:@typescript-eslint/eslint-recommended',
+            'plugin:@typescript-eslint/recommended',
+            'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        ],
+        parserOptions: {
+            project: ['./tsconfig.json'],
+        }
+    }]
 }
