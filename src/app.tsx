@@ -1,38 +1,24 @@
-import {ReactElement, useReducer} from 'react'
-import styled from '@emotion/styled'
+import {ReactElement} from 'react'
 import globalStyle from './globalStyle'
 import {Global} from '@emotion/react'
-import {Box, ChakraProvider} from '@chakra-ui/react'
-import {useQuery, useMutation, QueryClientProvider, QueryClient} from 'react-query'
-
-const Container = styled.h1`
-    margin: auto;
-    color: blue;
-`
-
-const fetchThing = () => {
-    return fetch('https://localhost/api/thing')
-}
-
-const Wrapper = ({text, onClick}: {text: string; onClick: () => void}) => {
-    const {data, isLoading} = useQuery('thing', fetchThing)
-
-    return <Container onClick={onClick}> {text}</Container>
-}
+import {ChakraProvider} from '@chakra-ui/react'
+import {QueryClientProvider, QueryClient} from 'react-query'
+import Router from './router'
+import {BrowserRouter} from 'react-router-dom'
 
 const client = new QueryClient()
 
 const App = (): ReactElement => {
     return (
         <>
-            <QueryClientProvider client={client}>
-                <ChakraProvider>
-                    <Box borderWidth={1} borderColor={'red'} padding={'10px 10px 10px 10px'} margin="auto">
-                        <Wrapper text={'React App'} onClick={() => void 0} />
-                    </Box>
-                    <Global styles={globalStyle} />
-                </ChakraProvider>
-            </QueryClientProvider>
+            <BrowserRouter>
+                <QueryClientProvider client={client}>
+                    <ChakraProvider>
+                        <Router />
+                        <Global styles={globalStyle} />
+                    </ChakraProvider>
+                </QueryClientProvider>
+            </BrowserRouter>
         </>
     )
 }
