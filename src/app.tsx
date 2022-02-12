@@ -16,6 +16,7 @@ const fetchThing = () => {
 
 const Wrapper = ({text, onClick}: {text: string; onClick: () => void}) => {
     const {data, isLoading} = useQuery('thing', fetchThing)
+
     return <Container onClick={onClick}> {text}</Container>
 }
 
