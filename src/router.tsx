@@ -1,10 +1,10 @@
 import {ReactElement} from 'react'
-import {Route} from 'react-router-dom'
+import {useRoutes} from 'react-router-dom'
 
-const Router = (): ReactElement => (
-    <>
-        <Route path={'/'} />
-    </>
-)
+import Boxx from './box'
 
-export default Router
+const mainRoutes = [{path: '/', element: <Boxx />}]
+
+const MainRouter = (): ReactElement | null => useRoutes(mainRoutes)
+
+export default MainRouter
