@@ -5,6 +5,7 @@ import {ChakraProvider} from '@chakra-ui/react'
 import {QueryClientProvider, QueryClient} from 'react-query'
 import Router from './router'
 import {BrowserRouter} from 'react-router-dom'
+import Fn from 'common/index'
 
 const client = new QueryClient()
 

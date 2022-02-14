@@ -4,7 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 // const autoprefixer = require('autoprefixer')
 
 const buildEnv = process.env.NODE_ENV || 'production'
@@ -62,6 +63,7 @@ module.exports = (env, argv) => {
                 path: false,
                 os: false,
             },
+            plugins: [new TsconfigPathsPlugin()]
         },
         cache: true,
         module: {

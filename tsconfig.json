@@ -14,7 +14,11 @@
         "moduleResolution": "node",
         "resolveJsonModule": true,
         "isolatedModules": true,
-        "module": "commonjs"
+        "module": "commonjs",
+        "baseUrl": "./src",
+        "paths": {
+            "common/": [ "./common/*" ]
+        }
 
     },
     "include": ["src/**/*.*"],
